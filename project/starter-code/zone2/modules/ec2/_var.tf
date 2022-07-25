@@ -1,5 +1,7 @@
 variable "name" {}
-variable "aws_ami" {}
+variable "aws_ami" {
+  default     = "ami-0eff9baf4d268050e"
+}
 variable "account" {}
 variable "private_subnet_ids" {}
 variable "public_subnet_ids" {}
