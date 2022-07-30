@@ -6,9 +6,9 @@ resource "aws_lb_target_group" "udacity" {
 }
 
 resource "aws_lb_target_group_attachment" "udacity" {
-  count            = length(var.instance_count)
+  count            = 1
   target_group_arn = aws_lb_target_group.udacity.arn
-  target_id        = var.ec2.*.id[count.index]
+  target_id        = var.ec2.*.id
   port             = 80
 }
 
