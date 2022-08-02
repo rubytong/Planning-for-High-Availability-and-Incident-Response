@@ -7,22 +7,21 @@ us-west-1a, us-west-1b
 ## Servers and Clusters
 
 ### Table 1.1 Summary
-| Asset                     | Purpose                                   | Size                                                                   | Qty                                                             | DR                                                                                                           |
-|---------------------------|-------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Asset name                | Brief description                         | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
-| EC2 instance              | Run webserver                             | t3.micro                                                               | 3                                                               | Multiple zones in us-east-2 region                                                                           |
-| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium                                                              | 2                                                               | Multiple zones in us-east-2 region                                                                           |
-| VPC                       | Virtual Private network                   |                                                                        | 1                                                               | Multiple zones in us-east-2 region                                                                           |
-| Application Load Balancer | Load balancing                            |                                                                        | 1                                                               |                                                                                                              |
-| Primary RDS cluster       | Primary Database backend                  | db.t2.small                                                            | 2                                                               |                                                                                                              |
-| Secondary RDS cluster     | Replication DB cluster                    | db.t2.small                                                            | 2                                                               | Used for DR                                                                                                  |
-| Custom AMI image          |                                           |                                                                        |                                                                 |                                                                                                              |
-
+| Asset                     | Purpose                                   | Size        | Qty | DR                                 |
+|---------------------------|-------------------------------------------|-------------|-----|------------------------------------|
+| EC2 instance              | Run webserver                             | t3.micro    | 3   | Multiple zones in us-east-2 region |
+| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | Multiple zones in us-east-2 region |
+| VPC                       | Virtual Private network                   |             | 1   | Multiple zones in us-east-2 region |
+| Application Load Balancer | Load balancing                            |             | 1   |                                    |
+| Primary RDS cluster       | Primary Database backend                  | db.t2.small | 2   |                                    |
+| Secondary RDS cluster     | Replication DB cluster                    | db.t2.small | 2   | Used for DR                        |
 
 ### Descriptions
 - 3 EC2 instances running the website and API
-- 2-node RDS cluster running backend database for the website
-- Backend Database backups daily and stored in S3 for recovery
+- 2-node Primary RDS clusters running backend database for the website
+- 2-node Secondary RDS clusters for replication db
+- VPC
+- Application Load Balancer for balancing traffic
 - 2-node EKS cluster for running Grafana and Prometheus to monitor the web application
 
 ## DR Plan
