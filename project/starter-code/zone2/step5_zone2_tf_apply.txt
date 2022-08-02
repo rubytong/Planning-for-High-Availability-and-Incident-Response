@@ -1,0 +1,363 @@
+[0m[1mmodule.project_eks.aws_security_group.eks-cluster: Refreshing state... [id=sg-09b6af0ab28782130][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324862700000006][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324860500000004][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324877300000007][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Refreshing state... [id=app-udacity-eks-cluster-role-20220802034324815000000001][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Refreshing state... [id=app-udacity-eks-cluster-role-20220802034324815700000002][0m
+[0m[1mmodule.project_alb.aws_lb_target_group.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7][0m
+[0m[1mmodule.project_ec2.aws_security_group.ec2_sg: Refreshing state... [id=sg-0fd5f979150c1c6b3][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Refreshing state... [id=app-udacity-eks-node-role-20220802034324859000000003][0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Refreshing state... [id=udacity-cluster][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Refreshing state... [id=i-0b82da9d80d158e92][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Refreshing state... [id=i-0db413b26b2108cc1][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Refreshing state... [id=i-0e9ed6f21c2ee32fb][0m
+[0m[1mmodule.project_alb.aws_lb.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799][0m
+[0m[1mmodule.project_alb.aws_lb_listener.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Refreshing state... [id=app-udacity-eks-node-role-20220802034324861200000005][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324953800000008][0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Refreshing state... [id=udacity-cluster:app-udacity-node-group][0m
+[0m[1mkubernetes_namespace.udacity: Refreshing state... [id=udacity][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802034340290700000009][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[2]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434045890000000b][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434041480000000a][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply":
+
+[1m  # module.project_eks.aws_eks_node_group.node[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eks_node_group" "node" {
+        [1m[0mid[0m[0m              = "udacity-cluster:app-udacity-node-group"
+      [32m+[0m [0m[1m[0mlabels[0m[0m          = {}
+        [1m[0mtags[0m[0m            = {
+            "Name" = "eks-udacity-nodes"
+        }
+        [90m# (14 unchanged attributes hidden)[0m[0m
+
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.project_eks.aws_eks_cluster.cluster[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eks_cluster" "cluster" {
+      [32m+[0m [0m[1m[0menabled_cluster_log_types[0m[0m = []
+        [1m[0mid[0m[0m                        = "udacity-cluster"
+        [1m[0mname[0m[0m                      = "udacity-cluster"
+      [32m+[0m [0m[1m[0mtags[0m[0m                      = {}
+        [90m# (10 unchanged attributes hidden)[0m[0m
+
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.project_eks.aws_security_group.eks-cluster[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_security_group" "eks-cluster" {
+        [1m[0mid[0m[0m                     = "sg-09b6af0ab28782130"
+        [1m[0mname[0m[0m                   = "SG-eks-cluster"
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+[1m  # kubernetes_namespace.udacity[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_namespace" "udacity" {
+        [1m[0mid[0m[0m = "udacity"
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {}
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "udacity"
+            [90m# (3 unchanged attributes hidden)[0m[0m
+        }
+    }
+[1m  # module.project_alb.aws_lb.udacity[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_lb" "udacity" {
+        [1m[0mid[0m[0m                         = "arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799"
+        [1m[0mname[0m[0m                       = "udacity-lb-tf"
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = {}
+        [90m# (17 unchanged attributes hidden)[0m[0m
+
+
+        [90m# (3 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.project_alb.aws_lb_listener.udacity[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_lb_listener" "udacity" {
+        [1m[0mid[0m[0m                = "arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200"
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {}
+        [90m# (5 unchanged attributes hidden)[0m[0m
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+[1m  # module.project_alb.aws_lb_target_group.udacity[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_lb_target_group" "udacity" {
+        [1m[0mid[0m[0m                                 = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7"
+        [1m[0mname[0m[0m                               = "udacity-lb-tg"
+      [32m+[0m [0m[1m[0mtags[0m[0m                               = {}
+        [90m# (14 unchanged attributes hidden)[0m[0m
+
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+  [33m~[0m update in-place
+[31m-[0m/[32m+[0m destroy and then create replacement
+[0m
+Terraform will perform the following actions:
+
+[1m  # kubernetes_service.grafana-external[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "kubernetes_service" "grafana-external" {
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mwait_for_load_balancer[0m[0m = true
+
+      [32m+[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mannotations[0m[0m      = {
+              [32m+[0m [0m"service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
+              [32m+[0m [0m"service.beta.kubernetes.io/aws-load-balancer-type"            = "nlb"
+            }
+          [32m+[0m [0m[1m[0mgeneration[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m             = "grafana-external"
+          [32m+[0m [0m[1m[0mnamespace[0m[0m        = "monitoring"
+          [32m+[0m [0m[1m[0mresource_version[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0muid[0m[0m              = (known after apply)
+        }
+
+      [32m+[0m [0mspec {
+          [32m+[0m [0m[1m[0mallocate_load_balancer_node_ports[0m[0m = true
+          [32m+[0m [0m[1m[0mcluster_ip[0m[0m                        = (known after apply)
+          [32m+[0m [0m[1m[0mcluster_ips[0m[0m                       = (known after apply)
+          [32m+[0m [0m[1m[0mexternal_traffic_policy[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mhealth_check_node_port[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0minternal_traffic_policy[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mip_families[0m[0m                       = (known after apply)
+          [32m+[0m [0m[1m[0mip_family_policy[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mpublish_not_ready_addresses[0m[0m       = false
+          [32m+[0m [0m[1m[0mselector[0m[0m                          = {
+              [32m+[0m [0m"app.kubernetes.io/name" = "grafana"
+            }
+          [32m+[0m [0m[1m[0msession_affinity[0m[0m                  = "None"
+          [32m+[0m [0m[1m[0mtype[0m[0m                              = "LoadBalancer"
+
+          [32m+[0m [0mport {
+              [32m+[0m [0m[1m[0mnode_port[0m[0m   = (known after apply)
+              [32m+[0m [0m[1m[0mport[0m[0m        = 80
+              [32m+[0m [0m[1m[0mprotocol[0m[0m    = "TCP"
+              [32m+[0m [0m[1m[0mtarget_port[0m[0m = "3000"
+            }
+
+          [32m+[0m [0msession_affinity_config {
+              [32m+[0m [0mclient_ip {
+                  [32m+[0m [0m[1m[0mtimeout_seconds[0m[0m = (known after apply)
+                }
+            }
+        }
+    }
+
+[1m  # module.project_alb.aws_lb_target_group_attachment.udacity[1][0m must be [1m[31mreplaced[0m[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_lb_target_group_attachment" "udacity" {
+      [33m~[0m [0m[1m[0mid[0m[0m               = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434041480000000a" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mtarget_id[0m[0m        = "i-0db413b26b2108cc1" [33m->[0m [0m(known after apply) [31m# forces replacement[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_instance" "ubuntu" {
+        [1m[0mid[0m[0m                                   = "i-0b82da9d80d158e92"
+      [33m~[0m [0m[1m[0mtags[0m[0m                                 = {
+          [33m~[0m [0m"Name" = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-1"
+        }
+      [33m~[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [33m~[0m [0m"Name"      = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-1"
+            [90m# (1 unchanged element hidden)[0m[0m
+        }
+        [90m# (30 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[1][0m must be [1m[31mreplaced[0m[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_instance" "ubuntu" {
+      [33m~[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-west-1:701638522519:instance/i-0db413b26b2108cc1" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-west-1a" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 2 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdisable_api_stop[0m[0m                     = false [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mebs_optimized[0m[0m                        = false [33m->[0m [0m(known after apply)
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [32m+[0m [0m[1m[0mhost_id[0m[0m                              = (known after apply)
+      [33m~[0m [0m[1m[0mid[0m[0m                                   = "i-0db413b26b2108cc1" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0minstance_state[0m[0m                       = "running" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mmonitoring[0m[0m                           = false [33m->[0m [0m(known after apply)
+      [32m+[0m [0m[1m[0moutpost_arn[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mpassword_data[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_group[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_partition_number[0m[0m           = (known after apply)
+      [33m~[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-052d2cff1f01c224d" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-100-10-154.us-west-1.compute.internal" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.100.10.154" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mpublic_dns[0m[0m                           = "ec2-18-144-126-146.us-west-1.compute.amazonaws.com" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mpublic_ip[0m[0m                            = "18.144.126.146" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-07c119501198f7b29" [33m->[0m [0m"subnet-0f0ef75061307965b" [31m# forces replacement[0m[0m
+      [33m~[0m [0m[1m[0mtags[0m[0m                                 = {
+          [33m~[0m [0m"Name" = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-2"
+        }
+      [33m~[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [33m~[0m [0m"Name"      = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-2"
+            [90m# (1 unchanged element hidden)[0m[0m
+        }
+      [33m~[0m [0m[1m[0mtenancy[0m[0m                              = "default" [33m->[0m [0m(known after apply)
+      [32m+[0m [0m[1m[0muser_data[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0muser_data_base64[0m[0m                     = (known after apply)
+        [90m# (7 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mcapacity_reservation_specification {
+          [33m~[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [33m->[0m [0m(known after apply)
+
+          [32m+[0m [0mcapacity_reservation_target {
+              [32m+[0m [0m[1m[0mcapacity_reservation_id[0m[0m                 = (known after apply)
+              [32m+[0m [0m[1m[0mcapacity_reservation_resource_group_arn[0m[0m = (known after apply)
+            }
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "unlimited" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [32m+[0m [0mebs_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msnapshot_id[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mthroughput[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+
+      [33m~[0m [0menclave_options {
+          [33m~[0m [0m[1m[0menabled[0m[0m = false [33m->[0m [0m(known after apply)
+        }
+
+      [32m+[0m [0mephemeral_block_device {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mno_device[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_name[0m[0m = (known after apply)
+        }
+
+      [33m~[0m [0mmaintenance_options {
+          [33m~[0m [0m[1m[0mauto_recovery[0m[0m = "default" [33m->[0m [0m(known after apply)
+        }
+
+      [33m~[0m [0mmetadata_options {
+          [33m~[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [33m->[0m [0m(known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_card_index[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m  = (known after apply)
+        }
+
+      [33m~[0m [0mprivate_dns_name_options {
+          [33m~[0m [0m[1m[0menable_resource_name_dns_a_record[0m[0m    = false [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0menable_resource_name_dns_aaaa_record[0m[0m = false [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mhostname_type[0m[0m                        = "ip-name" [33m->[0m [0m(known after apply)
+        }
+
+      [33m~[0m [0mroot_block_device {
+          [33m~[0m [0m[1m[0mdelete_on_termination[0m[0m = true [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/sda1" [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mencrypted[0m[0m             = false [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0miops[0m[0m                  = 100 [33m->[0m [0m(known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [33m~[0m [0m[1m[0mtags[0m[0m                  = {} [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mthroughput[0m[0m            = 0 [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mvolume_id[0m[0m             = "vol-099bf1aa6cc0111ca" [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mvolume_size[0m[0m           = 8 [33m->[0m [0m(known after apply)
+          [33m~[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [33m->[0m [0m(known after apply)
+        }
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_instance" "ubuntu" {
+        [1m[0mid[0m[0m                                   = "i-0e9ed6f21c2ee32fb"
+      [33m~[0m [0m[1m[0mtags[0m[0m                                 = {
+          [33m~[0m [0m"Name" = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-3"
+        }
+      [33m~[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [33m~[0m [0m"Name"      = "Ubuntu-Web" [33m->[0m [0m"Ubuntu-Web-3"
+            [90m# (1 unchanged element hidden)[0m[0m
+        }
+        [90m# (30 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 3 to add, 2 to change, 2 to destroy.
+[0m[0m[1m
+Do you want to perform these actions?[0m
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  [1mEnter a value:[0m [0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434041480000000a][0m[0m
+[0m[1mkubernetes_service.grafana-external: Creating...[0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Destruction complete after 0s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Destroying... [id=i-0db413b26b2108cc1][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Modifying... [id=i-0b82da9d80d158e92][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Modifying... [id=i-0e9ed6f21c2ee32fb][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Modifications complete after 2s [id=i-0b82da9d80d158e92][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Modifications complete after 2s [id=i-0e9ed6f21c2ee32fb][0m
+[0m[1mkubernetes_service.grafana-external: Creation complete after 4s [id=monitoring/grafana-external][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 20s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 30s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 40s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 50s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0db413b26b2108cc1, 1m0s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Destruction complete after 1m0s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Creating...[0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Creation complete after 13s [id=i-0bcdb3f4f4b71b6a5][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Creating...[0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802043746478700000001][0m
+[0m[1m[32m
+Apply complete! Resources: 3 added, 2 changed, 2 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0maccount_id = "701638522519"
+caller_arn = "arn:aws:sts::701638522519:assumed-role/voclabs/user2056206=f8dd6a36-ed3e-11ec-9ecf-8f94f1e73a92"
+caller_user = "AROA2GXHKG2LXZ7R7WBAY:user2056206=f8dd6a36-ed3e-11ec-9ecf-8f94f1e73a92"

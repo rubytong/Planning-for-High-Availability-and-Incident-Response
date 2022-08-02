@@ -1,0 +1,943 @@
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324862700000006][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Refreshing state... [id=app-udacity-eks-cluster-role-20220802034324815700000002][0m
+[0m[1mmodule.project_eks.aws_security_group.eks-cluster: Refreshing state... [id=sg-09b6af0ab28782130][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Refreshing state... [id=app-udacity-eks-cluster-role-20220802034324815000000001][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324877300000007][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Refreshing state... [id=app-udacity-eks-node-role-20220802034324859000000003][0m
+[0m[1mmodule.project_alb.aws_lb_target_group.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324860500000004][0m
+[0m[1mmodule.project_ec2.aws_security_group.ec2_sg: Refreshing state... [id=sg-0fd5f979150c1c6b3][0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Refreshing state... [id=udacity-cluster][0m
+[0m[1mmodule.project_alb.aws_lb.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Refreshing state... [id=i-0b82da9d80d158e92][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Refreshing state... [id=i-0e9ed6f21c2ee32fb][0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Refreshing state... [id=i-0bcdb3f4f4b71b6a5][0m
+[0m[1mmodule.project_alb.aws_lb_listener.udacity: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Refreshing state... [id=app-udacity-eks-node-role-20220802034324861200000005][0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Refreshing state... [id=app-udacity-eks-node-role-20220802034324953800000008][0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Refreshing state... [id=udacity-cluster:app-udacity-node-group][0m
+[0m[1mkubernetes_namespace.udacity: Refreshing state... [id=udacity][0m
+[0m[1mkubernetes_service.grafana-external: Refreshing state... [id=monitoring/grafana-external][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802043746478700000001][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[2]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434045890000000b][0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802034340290700000009][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply":
+
+[1m  # module.project_ec2.aws_instance.ubuntu[2][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_instance" "ubuntu" {
+      [33m~[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true [33m->[0m [0mfalse
+        [1m[0mid[0m[0m                                   = "i-0e9ed6f21c2ee32fb"
+      [33m~[0m [0m[1m[0minstance_state[0m[0m                       = "running" [33m->[0m [0m"stopped"
+      [31m-[0m [0m[1m[0mpublic_dns[0m[0m                           = "ec2-54-67-9-52.us-west-1.compute.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m                            = "54.67.9.52" [90m->[0m [0m[90mnull[0m[0m
+        [1m[0mtags[0m[0m                                 = {
+            "Name" = "Ubuntu-Web-3"
+        }
+        [90m# (27 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.project_ec2.aws_instance.ubuntu[0][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_instance" "ubuntu" {
+      [33m~[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true [33m->[0m [0mfalse
+        [1m[0mid[0m[0m                                   = "i-0b82da9d80d158e92"
+      [33m~[0m [0m[1m[0minstance_state[0m[0m                       = "running" [33m->[0m [0m"stopped"
+      [31m-[0m [0m[1m[0mpublic_dns[0m[0m                           = "ec2-50-18-73-72.us-west-1.compute.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m                            = "50.18.73.72" [90m->[0m [0m[90mnull[0m[0m
+        [1m[0mtags[0m[0m                                 = {
+            "Name" = "Ubuntu-Web-1"
+        }
+        [90m# (27 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+[1m  # module.project_ec2.aws_instance.ubuntu[1][0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_instance" "ubuntu" {
+      [33m~[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true [33m->[0m [0mfalse
+        [1m[0mid[0m[0m                                   = "i-0bcdb3f4f4b71b6a5"
+      [33m~[0m [0m[1m[0minstance_state[0m[0m                       = "running" [33m->[0m [0m"stopped"
+      [31m-[0m [0m[1m[0mpublic_dns[0m[0m                           = "ec2-18-144-38-154.us-west-1.compute.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m                            = "18.144.38.154" [90m->[0m [0m[90mnull[0m[0m
+        [1m[0mtags[0m[0m                                 = {
+            "Name" = "Ubuntu-Web-2"
+        }
+        [90m# (27 unchanged attributes hidden)[0m[0m
+
+
+
+
+
+
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+[1m  # kubernetes_service.grafana-external[0m has been changed[0m[0m
+[0m  [33m~[0m[0m resource "kubernetes_service" "grafana-external" {
+        [1m[0mid[0m[0m                     = "monitoring/grafana-external"
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [33m~[0m [0mmetadata {
+          [32m+[0m [0m[1m[0mlabels[0m[0m           = {}
+            [1m[0mname[0m[0m             = "grafana-external"
+            [90m# (5 unchanged attributes hidden)[0m[0m
+        }
+
+      [33m~[0m [0mspec {
+          [32m+[0m [0m[1m[0mexternal_ips[0m[0m                      = []
+          [32m+[0m [0m[1m[0mload_balancer_source_ranges[0m[0m       = []
+            [90m# (11 unchanged attributes hidden)[0m[0m
+
+            [90m# (1 unchanged block hidden)[0m[0m
+        }
+    }
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy
+[0m
+Terraform will perform the following actions:
+
+[1m  # kubernetes_namespace.udacity[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "kubernetes_namespace" "udacity" {
+      [31m-[0m [0m[1m[0mid[0m[0m = "udacity" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mmetadata {
+          [31m-[0m [0m[1m[0mannotations[0m[0m      = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgeneration[0m[0m       = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mlabels[0m[0m           = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mname[0m[0m             = "udacity" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mresource_version[0m[0m = "1494" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0muid[0m[0m              = "ce93d7fc-87f4-44f5-a87f-73629ba9c749" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # kubernetes_service.grafana-external[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "kubernetes_service" "grafana-external" {
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "monitoring/grafana-external" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mstatus[0m[0m                 = [
+          [31m-[0m [0m{
+              [31m-[0m [0mload_balancer = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mingress = [
+                          [31m-[0m [0m{
+                              [31m-[0m [0mhostname = "a5505000ebb2e4b9d882d7789041b598-944c126dbac8dfb6.elb.us-west-1.amazonaws.com"
+                              [31m-[0m [0mip       = ""
+                            },
+                        ]
+                    },
+                ]
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mwait_for_load_balancer[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mmetadata {
+          [31m-[0m [0m[1m[0mannotations[0m[0m      = {
+              [31m-[0m [0m"service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
+              [31m-[0m [0m"service.beta.kubernetes.io/aws-load-balancer-type"            = "nlb"
+            } [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mgeneration[0m[0m       = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mlabels[0m[0m           = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mname[0m[0m             = "grafana-external" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mnamespace[0m[0m        = "monitoring" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mresource_version[0m[0m = "8323" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0muid[0m[0m              = "5505000e-bb2e-4b9d-882d-7789041b598b" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mspec {
+          [31m-[0m [0m[1m[0mallocate_load_balancer_node_ports[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcluster_ip[0m[0m                        = "172.20.32.218" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mcluster_ips[0m[0m                       = [
+              [31m-[0m [0m"172.20.32.218",
+            ] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mexternal_ips[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mexternal_traffic_policy[0m[0m           = "Cluster" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhealth_check_node_port[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mip_families[0m[0m                       = [
+              [31m-[0m [0m"IPv4",
+            ] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mip_family_policy[0m[0m                  = "SingleStack" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mload_balancer_source_ranges[0m[0m       = [] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mpublish_not_ready_addresses[0m[0m       = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mselector[0m[0m                          = {
+              [31m-[0m [0m"app.kubernetes.io/name" = "grafana"
+            } [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0msession_affinity[0m[0m                  = "None" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtype[0m[0m                              = "LoadBalancer" [90m->[0m [0m[90mnull[0m[0m
+
+          [31m-[0m [0mport {
+              [31m-[0m [0m[1m[0mnode_port[0m[0m   = 31225 [90m->[0m [0m[90mnull[0m[0m
+              [31m-[0m [0m[1m[0mport[0m[0m        = 80 [90m->[0m [0m[90mnull[0m[0m
+              [31m-[0m [0m[1m[0mprotocol[0m[0m    = "TCP" [90m->[0m [0m[90mnull[0m[0m
+              [31m-[0m [0m[1m[0mtarget_port[0m[0m = "3000" [90m->[0m [0m[90mnull[0m[0m
+            }
+        }
+    }
+
+[1m  # module.project_alb.aws_lb.udacity[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb" "udacity" {
+      [31m-[0m [0m[1m[0marn[0m[0m                        = "arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn_suffix[0m[0m                 = "app/udacity-lb-tf/246fffc3c294b799" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdesync_mitigation_mode[0m[0m     = "defensive" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdns_name[0m[0m                   = "udacity-lb-tf-199618958.us-west-1.elb.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdrop_invalid_header_fields[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_deletion_protection[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_http2[0m[0m               = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_waf_fail_open[0m[0m       = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                         = "arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0midle_timeout[0m[0m               = 60 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minternal[0m[0m                   = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mip_address_type[0m[0m            = "ipv4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mload_balancer_type[0m[0m         = "application" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                       = "udacity-lb-tf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m            = [
+          [31m-[0m [0m"sg-0fd5f979150c1c6b3",
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnets[0m[0m                    = [
+          [31m-[0m [0m"subnet-07c119501198f7b29",
+          [31m-[0m [0m"subnet-0f0ef75061307965b",
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                       = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                   = {
+          [31m-[0m [0m"Name"      = "udacity"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                     = "vpc-07867edf891098e4e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mzone_id[0m[0m                    = "Z368ELLRRE2KJ0" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0maccess_logs {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0msubnet_mapping {
+          [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-07c119501198f7b29" [90m->[0m [0m[90mnull[0m[0m
+        }
+      [31m-[0m [0msubnet_mapping {
+          [31m-[0m [0m[1m[0msubnet_id[0m[0m = "subnet-0f0ef75061307965b" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_alb.aws_lb_listener.udacity[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb_listener" "udacity" {
+      [31m-[0m [0m[1m[0marn[0m[0m               = "arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                = "arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mload_balancer_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mport[0m[0m              = 80 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprotocol[0m[0m          = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m              = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m          = {
+          [31m-[0m [0m"Name"      = "udacity"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mdefault_action {
+          [31m-[0m [0m[1m[0morder[0m[0m            = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtarget_group_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtype[0m[0m             = "forward" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_alb.aws_lb_target_group.udacity[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group" "udacity" {
+      [31m-[0m [0m[1m[0marn[0m[0m                                = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn_suffix[0m[0m                         = "targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mconnection_termination[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mderegistration_delay[0m[0m               = "300" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                 = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mlambda_multi_value_headers_enabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mload_balancing_algorithm_type[0m[0m      = "round_robin" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                               = "udacity-lb-tg" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mport[0m[0m                               = 80 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprotocol[0m[0m                           = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprotocol_version[0m[0m                   = "HTTP1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mproxy_protocol_v2[0m[0m                  = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mslow_start[0m[0m                         = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                               = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                           = {
+          [31m-[0m [0m"Name"      = "udacity"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_type[0m[0m                        = "instance" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                             = "vpc-07867edf891098e4e" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mhealth_check {
+          [31m-[0m [0m[1m[0menabled[0m[0m             = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhealthy_threshold[0m[0m   = 5 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minterval[0m[0m            = 30 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmatcher[0m[0m             = "200" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mpath[0m[0m                = "/" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mport[0m[0m                = "traffic-port" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mprotocol[0m[0m            = "HTTP" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtimeout[0m[0m             = 5 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0munhealthy_threshold[0m[0m = 2 [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mstickiness {
+          [31m-[0m [0m[1m[0mcookie_duration[0m[0m = 86400 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0menabled[0m[0m         = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtype[0m[0m            = "lb_cookie" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_alb.aws_lb_target_group_attachment.udacity[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group_attachment" "udacity" {
+      [31m-[0m [0m[1m[0mid[0m[0m               = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802034340290700000009" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mport[0m[0m             = 80 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_group_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_id[0m[0m        = "i-0b82da9d80d158e92" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_alb.aws_lb_target_group_attachment.udacity[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group_attachment" "udacity" {
+      [31m-[0m [0m[1m[0mid[0m[0m               = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802043746478700000001" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mport[0m[0m             = 80 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_group_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_id[0m[0m        = "i-0bcdb3f4f4b71b6a5" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_alb.aws_lb_target_group_attachment.udacity[2][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group_attachment" "udacity" {
+      [31m-[0m [0m[1m[0mid[0m[0m               = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434045890000000b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mport[0m[0m             = 80 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_group_arn[0m[0m = "arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtarget_id[0m[0m        = "i-0e9ed6f21c2ee32fb" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[0][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "ubuntu" {
+      [31m-[0m [0m[1m[0mami[0m[0m                                  = "ami-0eff9baf4d268050e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-west-1:701638522519:instance/i-0b82da9d80d158e92" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-west-1a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 2 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_stop[0m[0m                     = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mebs_optimized[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mget_password_data[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                   = "i-0b82da9d80d158e92" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_state[0m[0m                       = "stopped" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_type[0m[0m                        = "t3.micro" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m                             = "udacity" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmonitoring[0m[0m                           = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-0d7dad2312c09e185" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-100-10-76.us-west-1.compute.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.100.10.76" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msource_dest_check[0m[0m                    = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-07c119501198f7b29" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                 = {
+          [31m-[0m [0m"Name" = "Ubuntu-Web-1"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [31m-[0m [0m"Name"      = "Ubuntu-Web-1"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtenancy[0m[0m                              = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = [
+          [31m-[0m [0m"sg-0fd5f979150c1c6b3",
+        ] [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mcapacity_reservation_specification {
+          [31m-[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "unlimited" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0menclave_options {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmaintenance_options {
+          [31m-[0m [0m[1m[0mauto_recovery[0m[0m = "default" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmetadata_options {
+          [31m-[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mprivate_dns_name_options {
+          [31m-[0m [0m[1m[0menable_resource_name_dns_a_record[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhostname_type[0m[0m                        = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mroot_block_device {
+          [31m-[0m [0m[1m[0mdelete_on_termination[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/sda1" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mencrypted[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0miops[0m[0m                  = 100 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtags[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mthroughput[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_id[0m[0m             = "vol-0d9e4af65e140f9ef" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_size[0m[0m           = 8 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[1][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "ubuntu" {
+      [31m-[0m [0m[1m[0mami[0m[0m                                  = "ami-0eff9baf4d268050e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-west-1:701638522519:instance/i-0bcdb3f4f4b71b6a5" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-west-1b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 2 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_stop[0m[0m                     = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mebs_optimized[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mget_password_data[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                   = "i-0bcdb3f4f4b71b6a5" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_state[0m[0m                       = "stopped" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_type[0m[0m                        = "t3.micro" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m                             = "udacity" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmonitoring[0m[0m                           = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-060c0b565d74d8922" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-100-11-240.us-west-1.compute.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.100.11.240" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msource_dest_check[0m[0m                    = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-0f0ef75061307965b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                 = {
+          [31m-[0m [0m"Name" = "Ubuntu-Web-2"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [31m-[0m [0m"Name"      = "Ubuntu-Web-2"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtenancy[0m[0m                              = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = [
+          [31m-[0m [0m"sg-0fd5f979150c1c6b3",
+        ] [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mcapacity_reservation_specification {
+          [31m-[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "unlimited" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0menclave_options {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmaintenance_options {
+          [31m-[0m [0m[1m[0mauto_recovery[0m[0m = "default" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmetadata_options {
+          [31m-[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mprivate_dns_name_options {
+          [31m-[0m [0m[1m[0menable_resource_name_dns_a_record[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhostname_type[0m[0m                        = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mroot_block_device {
+          [31m-[0m [0m[1m[0mdelete_on_termination[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/sda1" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mencrypted[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0miops[0m[0m                  = 100 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtags[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mthroughput[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_id[0m[0m             = "vol-04919636ab31fe1af" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_size[0m[0m           = 8 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_ec2.aws_instance.ubuntu[2][0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "ubuntu" {
+      [31m-[0m [0m[1m[0mami[0m[0m                                  = "ami-0eff9baf4d268050e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m                                  = "arn:aws:ec2:us-west-1:701638522519:instance/i-0e9ed6f21c2ee32fb" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massociate_public_ip_address[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m                    = "us-west-1a" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_core_count[0m[0m                       = 1 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = 2 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_stop[0m[0m                     = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisable_api_termination[0m[0m              = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mebs_optimized[0m[0m                        = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mget_password_data[0m[0m                    = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mhibernation[0m[0m                          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                                   = "i-0e9ed6f21c2ee32fb" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = "stop" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_state[0m[0m                       = "stopped" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_type[0m[0m                        = "t3.micro" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_address_count[0m[0m                   = 0 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mipv6_addresses[0m[0m                       = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mkey_name[0m[0m                             = "udacity" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmonitoring[0m[0m                           = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = "eni-02518e81a97285e09" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_dns[0m[0m                          = "ip-10-100-10-45.us-west-1.compute.internal" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mprivate_ip[0m[0m                           = "10.100.10.45" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecondary_private_ips[0m[0m                = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msecurity_groups[0m[0m                      = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msource_dest_check[0m[0m                    = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_id[0m[0m                            = "subnet-07c119501198f7b29" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                                 = {
+          [31m-[0m [0m"Name" = "Ubuntu-Web-3"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [31m-[0m [0m"Name"      = "Ubuntu-Web-3"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtenancy[0m[0m                              = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = [
+          [31m-[0m [0m"sg-0fd5f979150c1c6b3",
+        ] [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mcapacity_reservation_specification {
+          [31m-[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = "open" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mcredit_specification {
+          [31m-[0m [0m[1m[0mcpu_credits[0m[0m = "unlimited" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0menclave_options {
+          [31m-[0m [0m[1m[0menabled[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmaintenance_options {
+          [31m-[0m [0m[1m[0mauto_recovery[0m[0m = "default" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mmetadata_options {
+          [31m-[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhttp_tokens[0m[0m                 = "optional" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mprivate_dns_name_options {
+          [31m-[0m [0m[1m[0menable_resource_name_dns_a_record[0m[0m    = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0menable_resource_name_dns_aaaa_record[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mhostname_type[0m[0m                        = "ip-name" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mroot_block_device {
+          [31m-[0m [0m[1m[0mdelete_on_termination[0m[0m = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mdevice_name[0m[0m           = "/dev/sda1" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mencrypted[0m[0m             = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0miops[0m[0m                  = 100 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mtags[0m[0m                  = {} [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mthroughput[0m[0m            = 0 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_id[0m[0m             = "vol-08725db7248cb2864" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_size[0m[0m           = 8 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvolume_type[0m[0m           = "gp2" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_ec2.aws_security_group.ec2_sg[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "ec2_sg" {
+      [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-west-1:701638522519:security-group/sg-0fd5f979150c1c6b3" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0megress[0m[0m                 = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = ""
+              [31m-[0m [0mfrom_port        = 0
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "-1"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 0
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-0fd5f979150c1c6b3" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mingress[0m[0m                = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = "monitoring"
+              [31m-[0m [0mfrom_port        = 9100
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "tcp"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 9100
+            },
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = "ssh port"
+              [31m-[0m [0mfrom_port        = 22
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "tcp"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 22
+            },
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = "web port"
+              [31m-[0m [0mfrom_port        = 80
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "tcp"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 80
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                   = "ec2_sg" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m               = "701638522519" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                   = {
+          [31m-[0m [0m"Name" = "ec2_sg"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m               = {
+          [31m-[0m [0m"Name"      = "ec2_sg"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-07867edf891098e4e" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_eks_cluster.cluster[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_eks_cluster" "cluster" {
+      [31m-[0m [0m[1m[0marn[0m[0m                       = "arn:aws:eks:us-west-1:701638522519:cluster/udacity-cluster" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcertificate_authority[0m[0m     = [
+          [31m-[0m [0m{
+              [31m-[0m [0mdata = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1EZ3dNakF6TkRrd05Wb1hEVE15TURjek1EQXpORGt3TlZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBSis4CnpwdUJmeGVUWmphd3A2TkM0VFdqTUNEK1RnU1orUmt6NEdvcDUxMFhVcVNZZ3dieXh3TWw5dGErWjJpb0lQcjMKUHFhMVFGNTVQaU5KVHptaDNPRnMveHFsamRWVlI2ZWxzWjNKdE5md0J4WklxbEhmeml2eUpwUjNyeDJGZUlrSApYcDlrYzNXbDgyMExhcHNRSjJFSEo4dXUxZ09YS2RybEtZZEp5aW1mNXhoUVpNWnB2TVBkTFpjNGN5UFVLVFhDClYwRkx1RkVBU1NWUFgwa3VkZDA0U1YwMXNyVWdqWlRzM04yekRnRWNFM3JMVzZZN25ZeDJnWkZtNTRHRS8vaTkKby83M01PZnRFa01QOHZ6blNYbjZHaWhSSDlsRFZ4WVBxVHdRSVhpNU8rbnZ0NXpzd2E3ck9vbUdMcUhVS255SQphcWxSd01Od0NQSEVqeGNCSS9VQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZHbHQ2QW5iMjBpczVLTC9WNENzNEliNkdPd2pNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDTFNrTjhiaGhBam5kV1o2OTBYTkRUYjk2dFNWUVNMRG93Zk1sZFBndXVjdXFseHZoZwo2bmNVQTNxN041a0JJMFdiVkRNVEJWTVVoQ25jUVc2cFdnTGM5bk53REEwRDdSc1Z5YlNsOG5wUkt3eXkzdWtoCjI2elhKRlNFWDBsc1NxU2twQzNSWGtuUzArZXhuNEZ6MFRGRGdKTytwRHdvQk9iUk80dkRweVhjRForSklvY1oKWjlHbnY2RDNzTTNGM0JMbzViRjZWaEpMRU9INElxdE5kZkM0S1J4Tk53eTlyQXJoL1hDcWQ3eDVEbUlCRHZ6cgp4VUpLLzFKSlRIOEt1UThGbnhaVmN2NXVWVGNzR0pwVTFNTng5MFIxOS9CNGNLTVU5aVpCOFZuUWVGTk1zQTBDCmhFOEx3VmdiNDZiU0hGTGtWbUM5RkJFMHhxYUZCWE1Ha2xGRwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcreated_at[0m[0m                = "2022-08-02 03:43:29.506 +0000 UTC" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menabled_cluster_log_types[0m[0m = [] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mendpoint[0m[0m                  = "https://1CA17DE28390042257468FC0B2D31EE9.sk1.us-west-1.eks.amazonaws.com" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                        = "udacity-cluster" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0midentity[0m[0m                  = [
+          [31m-[0m [0m{
+              [31m-[0m [0moidc = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0missuer = "https://oidc.eks.us-west-1.amazonaws.com/id/1CA17DE28390042257468FC0B2D31EE9"
+                    },
+                ]
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                      = "udacity-cluster" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mplatform_version[0m[0m          = "eks.10" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole_arn[0m[0m                  = "arn:aws:iam::701638522519:role/app-udacity-eks-cluster-role" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mstatus[0m[0m                    = "ACTIVE" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                      = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m                  = {
+          [31m-[0m [0m"Name"      = "udacity"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mversion[0m[0m                   = "1.21" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mkubernetes_network_config {
+          [31m-[0m [0m[1m[0mip_family[0m[0m         = "ipv4" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mservice_ipv4_cidr[0m[0m = "172.20.0.0/16" [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mvpc_config {
+          [31m-[0m [0m[1m[0mcluster_security_group_id[0m[0m = "sg-009fc4529d61754fe" [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mendpoint_private_access[0m[0m   = false [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mendpoint_public_access[0m[0m    = true [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mpublic_access_cidrs[0m[0m       = [
+              [31m-[0m [0m"0.0.0.0/0",
+            ] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0msecurity_group_ids[0m[0m        = [
+              [31m-[0m [0m"sg-09b6af0ab28782130",
+            ] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0msubnet_ids[0m[0m                = [
+              [31m-[0m [0m"subnet-02a025840545318df",
+              [31m-[0m [0m"subnet-02d91c65029c1e164",
+            ] [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mvpc_id[0m[0m                    = "vpc-07867edf891098e4e" [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_eks.aws_eks_node_group.node[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_eks_node_group" "node" {
+      [31m-[0m [0m[1m[0mami_type[0m[0m        = "AL2_x86_64" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0marn[0m[0m             = "arn:aws:eks:us-west-1:701638522519:nodegroup/udacity-cluster/app-udacity-node-group/66c12e57-d57a-7c8f-b6ee-5f00a97719b9" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcapacity_type[0m[0m   = "ON_DEMAND" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcluster_name[0m[0m    = "udacity-cluster" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdisk_size[0m[0m       = 20 [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m              = "udacity-cluster:app-udacity-node-group" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_types[0m[0m  = [
+          [31m-[0m [0m"t3.medium",
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mlabels[0m[0m          = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnode_group_name[0m[0m = "app-udacity-node-group" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mnode_role_arn[0m[0m   = "arn:aws:iam::701638522519:role/app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrelease_version[0m[0m = "1.21.12-20220725" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mresources[0m[0m       = [
+          [31m-[0m [0m{
+              [31m-[0m [0mautoscaling_groups              = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mname = "eks-app-udacity-node-group-66c12e57-d57a-7c8f-b6ee-5f00a97719b9"
+                    },
+                ]
+              [31m-[0m [0mremote_access_security_group_id = ""
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mstatus[0m[0m          = "ACTIVE" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0msubnet_ids[0m[0m      = [
+          [31m-[0m [0m"subnet-02a025840545318df",
+          [31m-[0m [0m"subnet-02d91c65029c1e164",
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m            = {
+          [31m-[0m [0m"Name" = "eks-udacity-nodes"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m        = {
+          [31m-[0m [0m"Name"      = "eks-udacity-nodes"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mversion[0m[0m         = "1.21" [90m->[0m [0m[90mnull[0m[0m
+
+      [31m-[0m [0mscaling_config {
+          [31m-[0m [0m[1m[0mdesired_size[0m[0m = 2 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_size[0m[0m     = 2 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmin_size[0m[0m     = 1 [90m->[0m [0m[90mnull[0m[0m
+        }
+
+      [31m-[0m [0mupdate_config {
+          [31m-[0m [0m[1m[0mmax_unavailable[0m[0m            = 1 [90m->[0m [0m[90mnull[0m[0m
+          [31m-[0m [0m[1m[0mmax_unavailable_percentage[0m[0m = 0 [90m->[0m [0m[90mnull[0m[0m
+        }
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSCloudwatchPolicy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324953800000008" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::701638522519:policy/app-udacity-eks-cluster-role-cloudwatch-policy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-cluster-role-20220802034324815700000002" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-cluster-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSServicePolicy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-cluster-role-20220802034324815000000001" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-cluster-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "node_AmazonEC2ContainerRegistryReadOnly" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324859000000003" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "node_AmazonEKSWorkerNodePolicy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324877300000007" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "node_AmazonEKS_CNI_Policy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324862700000006" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "node_CloudWatchAgentServerPolicy" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324860500000004" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "node_harmony_policy_attachment" {
+      [31m-[0m [0m[1m[0mid[0m[0m         = "app-udacity-eks-node-role-20220802034324861200000005" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::701638522519:policy/app-udacity-instance-policy" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrole[0m[0m       = "app-udacity-eks-node-role" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.project_eks.aws_security_group.eks-cluster[0m will be [1m[31mdestroyed[0m[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "eks-cluster" {
+      [31m-[0m [0m[1m[0marn[0m[0m                    = "arn:aws:ec2:us-west-1:701638522519:security-group/sg-09b6af0ab28782130" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0megress[0m[0m                 = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = ""
+              [31m-[0m [0mfrom_port        = 0
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "-1"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 0
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-09b6af0ab28782130" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mingress[0m[0m                = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcidr_blocks      = [
+                  [31m-[0m [0m"0.0.0.0/0",
+                ]
+              [31m-[0m [0mdescription      = ""
+              [31m-[0m [0mfrom_port        = 0
+              [31m-[0m [0mipv6_cidr_blocks = []
+              [31m-[0m [0mprefix_list_ids  = []
+              [31m-[0m [0mprotocol         = "-1"
+              [31m-[0m [0msecurity_groups  = []
+              [31m-[0m [0mself             = false
+              [31m-[0m [0mto_port          = 0
+            },
+        ] [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mname[0m[0m                   = "SG-eks-cluster" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m               = "701638522519" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                   = {} [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags_all[0m[0m               = {
+          [31m-[0m [0m"Name"      = "udacity"
+          [31m-[0m [0m"Terraform" = "true"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-07867edf891098e4e" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 0 to change, 23 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [31m-[0m [0m[1m[0maccount_id[0m[0m  = "701638522519" [90m->[0m [0m[90mnull[0m[0m
+  [31m-[0m [0m[1m[0mcaller_arn[0m[0m  = "arn:aws:sts::701638522519:assumed-role/voclabs/user2056206=f8dd6a36-ed3e-11ec-9ecf-8f94f1e73a92" [90m->[0m [0m[90mnull[0m[0m
+  [31m-[0m [0m[1m[0mcaller_user[0m[0m = "AROA2GXHKG2LXZ7R7WBAY:user2056206=f8dd6a36-ed3e-11ec-9ecf-8f94f1e73a92" [90m->[0m [0m[90mnull[0m[0m
+[0m[1m
+Do you really want to destroy all resources?[0m
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  [1mEnter a value:[0m [0m
+[0m[1mkubernetes_service.grafana-external: Destroying... [id=monitoring/grafana-external][0m[0m
+[0m[1mkubernetes_namespace.udacity: Destroying... [id=udacity][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[0]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802034340290700000009][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-20220802043746478700000001][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[2]: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7-2022080203434045890000000b][0m[0m
+[0m[1mmodule.project_alb.aws_lb_listener.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:listener/app/udacity-lb-tf/246fffc3c294b799/1f56994252644200][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[2]: Destruction complete after 1s[0m
+[0m[1mmodule.project_alb.aws_lb_listener.udacity: Destruction complete after 1s[0m
+[0m[1mmodule.project_alb.aws_lb.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:loadbalancer/app/udacity-lb-tf/246fffc3c294b799][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[1]: Destruction complete after 1s[0m
+[0m[1mmodule.project_alb.aws_lb_target_group_attachment.udacity[0]: Destruction complete after 1s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Destroying... [id=i-0bcdb3f4f4b71b6a5][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Destroying... [id=i-0e9ed6f21c2ee32fb][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group.udacity: Destroying... [id=arn:aws:elasticloadbalancing:us-west-1:701638522519:targetgroup/udacity-lb-tg/b54949ac87b111c7][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Destroying... [id=i-0b82da9d80d158e92][0m[0m
+[0m[1mmodule.project_alb.aws_lb_target_group.udacity: Destruction complete after 0s[0m
+[0m[1mkubernetes_service.grafana-external: Destruction complete after 1s[0m
+[0m[1mmodule.project_alb.aws_lb.udacity: Destruction complete after 1s[0m
+[0m[1mkubernetes_namespace.udacity: Destruction complete after 7s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Destroying... [id=app-udacity-eks-node-role-20220802034324860500000004][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Destroying... [id=app-udacity-eks-node-role-20220802034324953800000008][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Destroying... [id=udacity-cluster:app-udacity-node-group][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_CloudWatchAgentServerPolicy: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSCloudwatchPolicy: Destruction complete after 0s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Still destroying... [id=i-0bcdb3f4f4b71b6a5, 10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Still destroying... [id=i-0e9ed6f21c2ee32fb, 10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Still destroying... [id=i-0b82da9d80d158e92, 10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[0]: Destruction complete after 11s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[1]: Destruction complete after 11s[0m
+[0m[1mmodule.project_ec2.aws_instance.ubuntu[2]: Destruction complete after 11s[0m
+[0m[1mmodule.project_ec2.aws_security_group.ec2_sg: Destroying... [id=sg-0fd5f979150c1c6b3][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 10s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_security_group.ec2_sg: Still destroying... [id=sg-0fd5f979150c1c6b3, 10s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 20s elapsed][0m[0m
+[0m[1mmodule.project_ec2.aws_security_group.ec2_sg: Destruction complete after 18s[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 30s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 40s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 50s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m0s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m10s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m20s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m30s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m40s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 1m50s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m0s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Still destroying... [id=udacity-cluster:app-udacity-node-group, 2m10s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_node_group.node: Destruction complete after 2m17s[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Destroying... [id=udacity-cluster][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Destroying... [id=app-udacity-eks-node-role-20220802034324861200000005][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Destroying... [id=app-udacity-eks-node-role-20220802034324862700000006][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Destroying... [id=app-udacity-eks-node-role-20220802034324877300000007][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Destroying... [id=app-udacity-eks-node-role-20220802034324859000000003][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_harmony_policy_attachment: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 10s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 20s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 30s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 40s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 50s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m0s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m10s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Still destroying... [id=udacity-cluster, 1m20s elapsed][0m[0m
+[0m[1mmodule.project_eks.aws_eks_cluster.cluster: Destruction complete after 1m26s[0m
+[0m[1mmodule.project_eks.aws_security_group.eks-cluster: Destroying... [id=sg-09b6af0ab28782130][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Destroying... [id=app-udacity-eks-cluster-role-20220802034324815700000002][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Destroying... [id=app-udacity-eks-cluster-role-20220802034324815000000001][0m[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSServicePolicy: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_iam_role_policy_attachment.cluster_AmazonEKSClusterPolicy: Destruction complete after 0s[0m
+[0m[1mmodule.project_eks.aws_security_group.eks-cluster: Destruction complete after 1s[0m
+[0m[1m[32m
+Destroy complete! Resources: 23 destroyed.
+[0m
