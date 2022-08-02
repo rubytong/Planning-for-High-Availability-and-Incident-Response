@@ -27,7 +27,7 @@ us-west-1a, us-west-1b
 
 ## DR Plan
 ### Pre-Steps:
-Ensure the infrastructure is set up in the current region (us-east-1) is HA
+Ensure the infrastructure is set up in the current region (us-east-2) is HA
 - Update VPC with multiple availability zones
 - Increase number of EC2 instances for the website and API to 3 (best). Make sure that they are spread across multiple availability zones
 - Create cloud load balancer (LB) and attach EC2 instances to this LB
