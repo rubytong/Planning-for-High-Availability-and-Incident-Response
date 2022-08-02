@@ -16,7 +16,7 @@ resource "aws_instance" "ubuntu" {
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
    tags = {
-    Name = "Ubuntu-Web-${element(var.azs, count.index}"
+    Name = "Ubuntu-Web-${element(var.azs, count.index)}"
   }
 }
 
