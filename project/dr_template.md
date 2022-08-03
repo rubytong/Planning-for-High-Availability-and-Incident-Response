@@ -9,13 +9,11 @@ us-west-1a, us-west-1b
 ### Table 1.1 Summary
 | Asset                     | Purpose                                   | Size        | Qty | DR                                 |
 |---------------------------|-------------------------------------------|-------------|-----|------------------------------------|
-| EC2 instance              | Run webserver                             | t3.micro    | 3   | Multiple zones in us-east-2 region |
-| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | Multiple zones in us-east-2 region |
-| VPC                       | Virtual Private network                   |             | 1   | Multiple zones in us-east-2 region |
-| Application Load Balancer | Load balancing                            |             | 1   |                                    |
-| Primary RDS cluster       | Primary Database backend                  | db.t2.small | 2   |                                    |
-| Secondary RDS cluster     | Replication DB cluster                    | db.t2.small | 2   | Used for DR                        |
-
+| EC2 instance              | Run webserver                             | t3.micro    | 6   | 3 ones across 3 multiple zones in us-east-2 region to ensure HA, 3 ones across 2 zones in us-west-1 for DR|
+| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | 2 nodes acorss differnet zones per cluster for HA, one cluster in us-east-2 region and other one in us-west-1 for DR |
+| VPC                       | Virtual Private network                   |             | 2  | Multiple zones per VPC, one VPC in us-east-2 and other one in us-west-1 for DR |
+| Application Load Balancer | Load balancing                            |             | 2   | One LB in us-east-2 and other one in us-west-1                               |
+| RDS cluster       | Database backend                  | db.t2.small | 2   | 2 nodes acorss differnet zones per cluster for HA, one primary cluster in us-east-2 region and other one is replication in us-west-1 for DR |                               |
 ### Descriptions
 - 3 EC2 instances running the website and API
 - 2-node Primary RDS clusters running backend database for the website
