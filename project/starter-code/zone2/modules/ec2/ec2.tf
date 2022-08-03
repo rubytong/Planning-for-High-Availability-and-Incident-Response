@@ -8,15 +8,15 @@
 # }
 
 resource "aws_instance" "ubuntu" {
-  ami           = var.aws_ami
+  ami   = var.aws_ami
   count = var.instance_count
   instance_type = "t3.micro"
   key_name = "udacity"
-  subnet_id = var.public_subnet_ids[0]
+  subnet_id = element(var.public_subnet_ids, count.index)
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
-  tags = {
-    Name = "Ubuntu-Web"
+   tags = {
+    Name = "Ubuntu-Web-${count.index + 1}"
   }
 }
 
