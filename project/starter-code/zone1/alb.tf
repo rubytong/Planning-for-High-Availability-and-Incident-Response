@@ -1,5 +1,4 @@
 
-/*
 module "project_alb" {
    source             = "./modules/alb"
    ec2                = module.project_ec2.aws_instance
@@ -8,4 +7,3 @@ module "project_alb" {
    vpc_id             = module.vpc.vpc_id
    instance_count     = var.instance_count
  }
- */
