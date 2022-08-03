@@ -1,21 +1,39 @@
 # Infrastructure
 
 ## AWS Zones
-Identify your zones here
+us-east-2a, us-east-2b, us-east-2c
+us-west-1a, us-west-1b
 
 ## Servers and Clusters
 
 ### Table 1.1 Summary
-| Asset      | Purpose           | Size                                                                   | Qty                                                             | DR                                                                                                           |
-|------------|-------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
-
+| Asset                     | Purpose                                   | Size        | Qty | DR                                 |
+|---------------------------|-------------------------------------------|-------------|-----|------------------------------------|
+| EC2 instance              | Run webserver                             | t3.micro    | 6   | 3 ones across 3 multiple zones in us-east-2 region to ensure HA, 3 ones across 2 zones in us-west-1 for DR|
+| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | 2 nodes acorss differnet zones per cluster for HA, one cluster in us-east-2 region and other one in us-west-1 for DR |
+| VPC                       | Virtual Private network                   |             | 2  | Multiple zones per VPC, one VPC in us-east-2 and other one in us-west-1 for DR |
+| Application Load Balancer | Load balancing                            |             | 2   | One LB in us-east-2 and other one in us-west-1                               |
+| RDS cluster       | Database backend                  | db.t2.small | 2   | 2 nodes acorss differnet zones per cluster for HA, one primary cluster in us-east-2 region and other one is replication in us-west-1 for DR |                               |
 ### Descriptions
-More detailed descriptions of each asset identified above.
+- 3 EC2 instances running the website and API
+- 2-node Primary RDS clusters running backend database for the website
+- 2-node Secondary RDS clusters for replication db
+- VPC
+- Application Load Balancer for balancing traffic
+- 2-node EKS cluster for running Grafana and Prometheus to monitor the web application
 
 ## DR Plan
 ### Pre-Steps:
-List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice.
+Ensure the infrastructure is set up in the current region (us-east-2) is HA
+- Update VPC with multiple availability zones
+- Increase number of EC2 instances for the website and API to 3 (best). Make sure that they are spread across multiple availability zones
+- Create cloud load balancer (LB) and attach EC2 instances to this LB
+- Point DNS to the LB
+- Instance number of nodes for EKS cluster used for monitoring to 3 (best) across different zones
+- Increase number of nodes for SQL cluster to 3 (best) across multiple zones
+
+Replicate the infrastructure to other region (us-west-1)
 
 ## Steps:
-You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region
+- Point DNS to the LB in another region
+- Promote the replication database to be primary
