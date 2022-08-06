@@ -9,18 +9,18 @@ us-west-1a, us-west-1b
 ### Table 1.1 Summary
 | Asset                     | Purpose                                   | Size        | Qty | DR                                 |
 |---------------------------|-------------------------------------------|-------------|-----|------------------------------------|
-| EC2 instance              | Run webserver                             | t3.micro    | 6   | 3 ones across 3 multiple zones in us-east-2 region to ensure HA, 3 ones across 2 zones in us-west-1 for DR|
-| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | 2 nodes acorss differnet zones per cluster for HA, one cluster in us-east-2 region and other one in us-west-1 for DR |
+| EC2 instance              | Run webserver                             | t3.micro    | 6   | 3 ones distributed evently across multiple zones in us-east-2 region to ensure HA, 3 ones distributed evently across multiple zones in us-west-1 region for DR|
+| EKS cluster               | Run Grafana and Prometheus for monitoring | t3.medium   | 2   | 2 nodes distributed evently across multiple zones per cluster for HA, one cluster in us-east-2 region and other one in us-west-1 for DR |
 | VPC                       | Virtual Private network                   |             | 2  | Multiple zones per VPC, one VPC in us-east-2 and other one in us-west-1 for DR |
 | Application Load Balancer | Load balancing                            |             | 2   | One LB in us-east-2 and other one in us-west-1                               |
-| RDS cluster       | Database backend                  | db.t2.small | 2   | 2 nodes acorss differnet zones per cluster for HA, one primary cluster in us-east-2 region and other one is replication in us-west-1 for DR |                               |
+| RDS cluster       | Database backend                  | db.t2.small | 2   | 2 nodes distributed evently across multiple zones per cluster for HA, one primary cluster in us-east-2 region and other one is replication in us-west-1 for DR |                               |
 ### Descriptions
-- 3 EC2 instances running the website and API
-- 2-node Primary RDS clusters running backend database for the website
-- 2-node Secondary RDS clusters for replication db
-- VPC
-- Application Load Balancer for balancing traffic
-- 2-node EKS cluster for running Grafana and Prometheus to monitor the web application
+- EC2 instances running the website and API
+- Primary RDS cluster running backend database for the website
+- Secondary RDS cluster for replication db
+- VPCs to launch AWS resources in a logically isolated virtual network
+- Application Load Balancers for balancing traffic across EC2 instances in multiple zones
+- EKS clusters for running Grafana and Prometheus to monitor the web application
 
 ## DR Plan
 ### Pre-Steps:
